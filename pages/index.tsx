@@ -630,7 +630,7 @@ const Home: React.FC<HomeProps> = ({
       </Head>
       {selectedConversation && (
         <main
-          className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
+          className={`flex flex-col h-screen w-screen text-sm text-white dark:text-white ${lightMode}`}
         >
           <div className="fixed top-0 w-full sm:hidden">
             <Navbar
@@ -664,10 +664,10 @@ const Home: React.FC<HomeProps> = ({
                 />
 
                 <button
-                  className="fixed top-5 left-[270px] z-50 h-7 w-7 hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:left-[270px] sm:h-8 sm:w-8 sm:text-neutral-700"
+                  className="z-50 fixed top-3 sm:top-2 left-[270px] text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300"
                   onClick={handleToggleChatbar}
                 >
-                  <IconArrowBarLeft />
+                  <IconArrowBarLeft size={24} />
                 </button>
                 <div
                   onClick={handleToggleChatbar}
@@ -676,10 +676,10 @@ const Home: React.FC<HomeProps> = ({
               </div>
             ) : (
               <button
-                className="fixed top-2.5 left-4 z-50 h-7 w-7 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:left-4 sm:h-8 sm:w-8 sm:text-neutral-700"
+                className="z-50 fixed top-3 sm:top-2 left-4 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300"
                 onClick={handleToggleChatbar}
               >
-                <IconArrowBarRight />
+                <IconArrowBarRight size={24} />
               </button>
             )}
 
@@ -714,10 +714,10 @@ const Home: React.FC<HomeProps> = ({
                   onUpdateFolder={handleUpdateFolder}
                 />
                 <button
-                  className="fixed top-5 right-[270px] z-50 h-7 w-7 hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:right-[270px] sm:h-8 sm:w-8 sm:text-neutral-700"
+                  className="z-50 fixed top-3 sm:top-2 right-[270px] text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300"
                   onClick={handleTogglePromptbar}
                 >
-                  <IconArrowBarRight />
+                  <IconArrowBarRight size={24} />
                 </button>
                 <div
                   onClick={handleTogglePromptbar}
@@ -726,10 +726,10 @@ const Home: React.FC<HomeProps> = ({
               </div>
             ) : (
               <button
-                className="fixed top-2.5 right-4 z-50 h-7 w-7 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300 sm:top-0.5 sm:right-4 sm:h-8 sm:w-8 sm:text-neutral-700"
+                className="z-50 fixed top-3 sm:top-2 right-4 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300"
                 onClick={handleTogglePromptbar}
               >
-                <IconArrowBarLeft />
+                <IconArrowBarLeft size={24} />
               </button>
             )}
           </div>
