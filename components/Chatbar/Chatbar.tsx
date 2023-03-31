@@ -115,7 +115,7 @@ export const Chatbar: FC<Props> = ({
 
   return (
     //fixed top-0 left-0 z-50 flex h-full w-[260px] flex-col gap-2 p-2 transition-all sm:relative bg-[#202123]
-    <div className="flex flex-col gap-2 h-full">
+    <div className="flex flex-col gap-2 h-full  z-50">
       <div className="flex gap-2 px-1">
         <button
           className="flex flex-grow items-center gap-3 rounded-md border border-white/20 p-3 text-[14px] leading-normal text-white transition-colors duration-200 hover:bg-gray-500/10"

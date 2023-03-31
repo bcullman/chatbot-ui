@@ -641,7 +641,7 @@ const Home: React.FC<HomeProps> = ({
 
           <div className="flex h-full w-full pt-[48px] sm:pt-0">
             {showSidebar ? (
-              <div className='fixed top-0 left-0 z-50 flex h-full w-[260px] flex-col gap-2 p-2 transition-all sm:relative bg-[#202123]'>
+              <div className='absolute top-0 left-0 z-50 flex h-full w-[260px] flex-col gap-2 p-2 transition-all sm:relative bg-[#202123]'>
                 <Chatbar
                   loading={messageIsStreaming}
                   conversations={conversations}
@@ -671,7 +671,7 @@ const Home: React.FC<HomeProps> = ({
                 </button>
                 <div
                   onClick={handleToggleChatbar}
-                  className="absolute top-0 left-0 z-10 h-full w-full bg-black opacity-70 sm:hidden"
+                  className="fixed top-0 left-0 z-10 h-full w-full bg-black opacity-70 sm:hidden"
                 ></div>
               </div>
             ) : (
@@ -702,10 +702,10 @@ const Home: React.FC<HomeProps> = ({
             </div>
 
             {showPromptbar ? (
-              <div className="fixed top-0 right-0 z-50 flex h-full w-[260px] flex-col gap-2 bg-[#202123] p-2 transition-all sm:relative">
+              <div className="absolute top-0 right-0 z-50 flex h-full w-[260px] flex-col gap-2 bg-[#202123] p-2 transition-all sm:relative">
                 <div
                   onClick={handleTogglePromptbar}
-                  className="absolute top-0 left-0 z-10 h-full w-full bg-black opacity-70 sm:hidden"
+                  className="fixed top-0 left-0 z-10 h-full w-full bg-black opacity-70 sm:hidden"
                 ></div>
                 <button
                 // fixed top-3 sm:top-2 sm:right-[270px] right-4
