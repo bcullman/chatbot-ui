@@ -641,7 +641,7 @@ const Home: React.FC<HomeProps> = ({
 
           <div className="flex h-full w-full pt-[48px] sm:pt-0">
             {showSidebar ? (
-              <div>
+              <div className='fixed top-0 left-0 z-50 flex h-full w-[260px] flex-col gap-2 p-2 transition-all sm:relative bg-[#202123]'>
                 <Chatbar
                   loading={messageIsStreaming}
                   conversations={conversations}
@@ -702,7 +702,19 @@ const Home: React.FC<HomeProps> = ({
             </div>
 
             {showPromptbar ? (
-              <div>
+              <div className="fixed top-0 right-0 z-50 flex h-full w-[260px] flex-col gap-2 bg-[#202123] p-2 transition-all sm:relative">
+                <div
+                  onClick={handleTogglePromptbar}
+                  className="absolute top-0 left-0 z-10 h-full w-full bg-black opacity-70 sm:hidden"
+                ></div>
+                <button
+                // fixed top-3 sm:top-2 sm:right-[270px] right-4
+                  className=" z-50 absolute top-3 -left-10 sm:top-2 text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300"
+                  onClick={handleTogglePromptbar}
+                >
+                  <IconArrowBarRight size={24} />
+                </button>
+
                 <Promptbar
                   prompts={prompts}
                   folders={folders.filter((folder) => folder.type === 'prompt')}
@@ -713,16 +725,6 @@ const Home: React.FC<HomeProps> = ({
                   onDeleteFolder={handleDeleteFolder}
                   onUpdateFolder={handleUpdateFolder}
                 />
-                <button
-                  className="z-50 fixed top-3 sm:top-2 right-[270px] text-white hover:text-gray-400 dark:text-white dark:hover:text-gray-300"
-                  onClick={handleTogglePromptbar}
-                >
-                  <IconArrowBarRight size={24} />
-                </button>
-                <div
-                  onClick={handleTogglePromptbar}
-                  className="absolute top-0 left-0 z-10 h-full w-full bg-black opacity-70 sm:hidden"
-                ></div>
               </div>
             ) : (
               <button
